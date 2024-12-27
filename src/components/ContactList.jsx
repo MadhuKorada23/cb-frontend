@@ -11,7 +11,7 @@ const ContactList = () => {
 
   // Fetch and sort contacts alphabetically on initial load
   useEffect(() => {
-    fetch('http://localhost:5000/contacts')
+    fetch('https://cb-backend-txni.onrender.com/contacts')
       .then((response) => response.json())
       .then((data) => {
         console.log('Fetched contacts:', data);
@@ -44,7 +44,7 @@ const ContactList = () => {
 
   const handleDeleteContact = (contactId) => {
     if (window.confirm('Are you sure you want to delete this contact?')) {
-      fetch(`http://localhost:5000/contacts/${contactId}`, {
+      fetch(`https://cb-backend-txni.onrender.com/contacts/${contactId}`, {
         method: 'DELETE',
       })
         .then((response) => {
